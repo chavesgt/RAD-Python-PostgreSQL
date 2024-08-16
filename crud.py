@@ -32,7 +32,7 @@ class AppBD:
                 
     
         except (Exception, psycopg2.Error) as error:
-            print("Error in select operation", error)
+            print("Erroba na Seleção", error)
     
         finally:
             # closing database connection.
@@ -54,10 +54,10 @@ class AppBD:
           cursor.execute(postgres_insert_query, record_to_insert)
           self.connection.commit()
           count = cursor.rowcount
-          print (count, "Registro inserido com successo na tabela PRODUTO")
+          print (count, "Registro inserido com successo na tabela PRODUTOS")
         except (Exception, psycopg2.Error) as error :
           if(self.connection):
-              print("Falha ao inserir registro na tabela PRODUTO", error)
+              print("Falha ao inserir registro na tabela PRODUTOS", error)
         finally:
             #closing database connection.
             if(self.connection):

@@ -42,7 +42,7 @@ class AppBD:
                 print("A conexão com o PostgreSQL foi fechada.")
         return registros
       
-      #-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 #Inserir Produto
 #-----------------------------------------------------------------------------                 
     def inserirDados(self, codigo, nome, quantidade):
@@ -208,7 +208,7 @@ class PrincipalBD:
           self.id = 0
           self.iid = 0          
           registros=self.objBD.selecionarDados()
-          print("************ dados disponíveis no BD ***********")        
+          print("************ Dados Disponíveis no BD ***********")        
           for item in registros:
               codigo=item[0]
               nome=item[1]
@@ -232,7 +232,7 @@ class PrincipalBD:
 #-----------------------------------------------------------------------------           
     def fLerCampos(self):
         try:
-          print("************ dados disponíveis ***********") 
+          print("************ Dados Disponíveis ***********") 
           codigo = int(self.txtCodigo.get())
           print('codigo', codigo)
           nome=self.txtNome.get()
@@ -248,7 +248,7 @@ class PrincipalBD:
 #-----------------------------------------------------------------------------           
     def fInserirProduto(self):
         try:
-          print("************ dados disponíveis ***********") 
+          print("************ Dados disponíveis ***********") 
           codigo, nome, quantidade= self.fLerCampos()                    
           self.objBD.inserirDados(codigo, nome, quantidade)                    
           self.treeProdutos.insert('', 'end',
@@ -267,7 +267,7 @@ class PrincipalBD:
 #-----------------------------------------------------------------------------           
     def fEditarProduto(self):
         try:
-          print("************ dados disponíveis ***********")        
+          print("************ Dados disponíveis ***********")        
           codigo, nome, quantidade= self.fLerCampos()
           self.objBD.atualizarDados(codigo, nome, quantidade)          
           #recarregar dados na tela
@@ -282,7 +282,7 @@ class PrincipalBD:
 #-----------------------------------------------------------------------------                  
     def fExcluirProduto(self):
         try:
-          print("************ dados disponíveis ***********")        
+          print("************ Dados disponíveis ***********")        
           codigo, nome, quantidade= self.fLerCampos()
           self.objBD.excluirDados(codigo)          
           #recarregar dados na tela
